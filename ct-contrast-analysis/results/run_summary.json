@@ -1,0 +1,102 @@
+{
+  "n_slices": 94,
+  "n_contrast": 47,
+  "n_patients": 54,
+  "patient_level_split": true,
+  "metadata_features": [
+    "age",
+    "sex_male"
+  ],
+  "n_image_features": 25,
+  "excluded_as_leaky": [
+    "Contrast",
+    "ContrastTag",
+    "dcm_CodeMeaning",
+    "dcm_ContrastBolusAgent",
+    "dcm_ContrastBolusIngredientConcentration",
+    "dcm_ContrastBolusRoute",
+    "dcm_ContrastBolusVolume",
+    "dcm_ContrastFlowDuration",
+    "dcm_ContrastFlowRate",
+    "dcm_PerformedProcedureStepDescription",
+    "dcm_ProtocolName",
+    "dcm_RequestedContrastAgent",
+    "dcm_RequestedProcedureDescription",
+    "dcm_StudyDescription",
+    "dicom_name",
+    "raw_input_path",
+    "tiff_name"
+  ],
+  "best_per_feature_set": {
+    "Metadata only": {
+      "model": "RandomForest",
+      "AUC_mean": 0.554,
+      "AUC_sd": 0.137,
+      "F1_mean": 0.556
+    },
+    "Image only": {
+      "model": "LogReg",
+      "AUC_mean": 0.938,
+      "AUC_sd": 0.053,
+      "F1_mean": 0.885
+    },
+    "Image + Metadata": {
+      "model": "RandomForest",
+      "AUC_mean": 0.937,
+      "AUC_sd": 0.056,
+      "F1_mean": 0.865
+    }
+  },
+  "best_overall": {
+    "feature_set": "Image only",
+    "model": "LogReg"
+  },
+  "nested_tuned_AUC": {
+    "LogReg": 0.922,
+    "RandomForest": 0.921
+  },
+  "permutation_test": {
+    "real_AUC": 0.903,
+    "p_value": 0.005,
+    "n_permutations": 200
+  },
+  "top5_important_features": {
+    "CEI": 0.0498,
+    "frac_enhanced": 0.019,
+    "tis_kurt": 0.0152,
+    "enh_largest_blob_frac": 0.0071,
+    "tis_std": 0.0057
+  },
+  "feature_group_importance": {
+    "Enhancement (130\u2013400 HU)": 0.214,
+    "Tissue HU percentiles/moments": 0.0499,
+    "Patient metadata": -0.0002,
+    "Texture (GLCM + edges)": -0.0004,
+    "Other HU fractions + body size": -0.0014
+  },
+  "single_group_AUC": {
+    "Patient metadata": 0.552,
+    "Other HU fractions + body size": 0.622,
+    "Texture (GLCM + edges)": 0.837,
+    "Tissue HU percentiles/moments": 0.89,
+    "Enhancement (130\u2013400 HU)": 0.932
+  },
+  "raw_pixel_baseline_AUC": 0.762,
+  "ensemble_AUC": 0.938,
+  "posthoc_bone_suppressed_AUC": 0.95,
+  "posthoc_bone_suppressed_AUC_sd": 0.046,
+  "n_duplicates_removed": 6,
+  "acquisition_shortcut_AUC": 0.73,
+  "library_versions": {
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "matplotlib": "3.11.2",
+    "seaborn": "0.13.2",
+    "opencv": "5.0.0",
+    "pydicom": "3.0.2",
+    "scikit-image": "0.26.0",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1"
+  }
+}

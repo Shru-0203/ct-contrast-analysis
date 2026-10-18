@@ -1,0 +1,12 @@
+# dataset (download it yourself; do not commit medical images)
+data/
+*.dcm
+*.tif
+*.npz
+*.zip
+
+# python / jupyter
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+kaggle.json

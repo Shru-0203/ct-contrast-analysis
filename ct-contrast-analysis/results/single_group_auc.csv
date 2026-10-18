@@ -1,0 +1,6 @@
+,AUC mean,AUC sd
+Patient metadata,0.552,0.123
+Other HU fractions + body size,0.622,0.122
+Texture (GLCM + edges),0.837,0.065
+Tissue HU percentiles/moments,0.89,0.097
+Enhancement (130–400 HU),0.932,0.059

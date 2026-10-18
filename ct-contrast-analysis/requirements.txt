@@ -1,0 +1,14 @@
+# Minimum versions. The results in results/ were produced with the versions in results/environment.json
+# (Python 3.13, numpy 2.x, pandas 3.0, scikit-learn 1.9). Google Colab already has everything except
+# pydicom and scikit-image, which the notebook installs itself.
+numpy>=1.24
+pandas>=2.0
+matplotlib>=3.7
+seaborn>=0.12
+scipy>=1.10
+scikit-learn>=1.3
+scikit-image>=0.21
+opencv-python-headless>=4.8
+pydicom>=2.4
+jupyter
+kagglehub  # optional: only for the automatic download option
